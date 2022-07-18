@@ -52,7 +52,6 @@
 
     <v-main>
       <v-container
-        class="red"
         fluid
       >
         <router-view />
@@ -72,7 +71,9 @@ export default {
     items: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/' },
       { title: 'Photos', icon: 'mdi-image' },
-      { title: 'About', icon: 'mdi-help-box', to: '/grid-system' },
+      { title: 'Grid System', icon: 'mdi-help-box', to: '/grid-system' },
+      { title: 'Grid List Page', icon: 'mdi-image', to: '/grid-list-page' },
+      { title: 'Breakpoints', icon: 'mdi-image', to: '/breakpoints' },
     ],
   }),
 };
