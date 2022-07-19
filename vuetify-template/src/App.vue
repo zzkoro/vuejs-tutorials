@@ -49,11 +49,8 @@
       </v-list>
     </v-navigation-drawer>
 
-
     <v-main>
-      <v-container
-        fluid
-      >
+      <v-container fluid>
         <router-view />
       </v-container>
     </v-main>
@@ -74,6 +71,7 @@ export default {
       { title: 'Grid System', icon: 'mdi-help-box', to: '/grid-system' },
       { title: 'Grid List Page', icon: 'mdi-image', to: '/grid-list-page' },
       { title: 'Breakpoints', icon: 'mdi-image', to: '/breakpoints' },
+      { title: 'Typography', icon: 'mdi-image', to: '/typography' },
     ],
   }),
 };
