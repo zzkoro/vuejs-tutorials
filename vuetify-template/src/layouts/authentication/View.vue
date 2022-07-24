@@ -1,14 +1,14 @@
 <template lang="">
-  <v-fade-transition mode="out-in">
+  <v-main>
     <router-view />
-  </v-fade-transition>
+  </v-main>
 </template>
 <script>
-import '@/styles/overrides.sass'
 export default {
-  name: 'App'
+  name: 'AuthenticationView'
 }
 </script>
 <style lang="">
 
 </style>
+
