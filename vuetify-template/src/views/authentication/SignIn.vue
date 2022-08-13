@@ -79,24 +79,31 @@
   </v-container>
 </template>
 <script>
+import { ref, reactive, toRefs } from '@vue/composition-api'
+
 export default {
   name: 'SignIn',
-  data() {
-    return {
+  setup(props, context) {
+    const state = reactive({
       email: null,
-      password: null
-    }
-  },
-  methods: {
-    signIn() {
-      this.$refs.observer.validate().then(result => {
+      password: null,
+      observer: null,
+      form: null,
+    });
+
+    const signIn = () => {
+      state.observer.validate().then(result => {
         if (result) {
           alert('로그인 처리')
         }
       })
+    };
 
+    return {
+      ...toRefs(state),
+      signIn,
     }
-  },
+  }
 }
 </script>
 <style lang="">
