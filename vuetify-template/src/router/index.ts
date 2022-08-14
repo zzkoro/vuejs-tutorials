@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import type { RouteConfig } from 'vue-router'
+
 Vue.use(VueRouter)
 
-const routes = [
+const routes: RouteConfig[] = [
   {
     path: '/',
     component: () => import(
       /* webpackChunkName: "layouts-default-index" */
-      '@/layouts/default/Index'
+      '@/layouts/default/Index.vue'
     ),
     children: [
       {
@@ -16,7 +18,7 @@ const routes = [
         name: 'Dashboard',
         component: () => import(
           /* webpackChunkName: "views-dashboard" */
-          '@/views/Dashboard'
+          '@/views/Dashboard.vue'
         )
       },
       {
@@ -24,7 +26,7 @@ const routes = [
         name: 'GridSystem',
         component: () => import(
           /* webpackChunkName: "views-grid-system" */
-          '@/views/GridSystem'
+          '@/views/GridSystem.vue'
         )
       },
       {
@@ -32,7 +34,7 @@ const routes = [
         name: 'GridListPage',
         component: () => import(
           /* webpackChunkName: "views-grid-list-page" */
-          '@/views/GridListPage'
+          '@/views/GridListPage.vue'
         )
       },
       {
@@ -40,7 +42,7 @@ const routes = [
         name: 'Breakpoints',
         component: () => import(
           /* webpackChunkName: "views-breakpoints" */
-          '@/views/Breakpoints'
+          '@/views/Breakpoints.vue'
         )
       },
       {
@@ -48,7 +50,7 @@ const routes = [
         name: 'Typography',
         component: () => import(
           /* webpackChunkName: "views-typography" */
-          '@/views/Typography'
+          '@/views/Typography.vue'
         )
       },
       {
@@ -56,7 +58,7 @@ const routes = [
         name: 'AppTables',
         component: () => import(
           /* webpackChunkName: "views-app-tables" */
-          '@/views/table/AppTables'
+          '@/views/table/AppTables.vue'
         )
       },
       {
@@ -64,7 +66,7 @@ const routes = [
         name: 'BasicTables',
         component: () => import(
           /* webpackChunkName: "views-basic-tables" */
-          '@/views/table/BasicTables'
+          '@/views/table/BasicTables.vue'
         )
       },
       {
@@ -72,7 +74,7 @@ const routes = [
         name: 'ValidationForm',
         component: () => import(
           /* webpackChunkName: "views-validation-forms" */
-          '@/views/form/ValidationForms'
+          '@/views/form/ValidationForms.vue'
         )
       },
       {
@@ -80,7 +82,7 @@ const routes = [
         name: 'AppForm',
         component: () => import(
           /* webpackChunkName: "views-app-forms" */
-          '@/views/form/AppForms'
+          '@/views/form/AppForms.vue'
         )
       },
       {
@@ -88,7 +90,7 @@ const routes = [
         name: 'Buttons',
         component: () => import(
           /* webpackChunkName: "views-buttons" */
-          '@/views/Buttons'
+          '@/views/Buttons.vue'
         )
       },
       {
@@ -96,7 +98,7 @@ const routes = [
         name: 'Icons',
         component: () => import(
           /* webpackChunkName: "views-icons" */
-          '@/views/Icons'
+          '@/views/Icons.vue'
         )
       },
     ]
@@ -105,7 +107,7 @@ const routes = [
     path: '/authentication',
     component: () => import(
       /* webpackChunkName: "layouts-authentication-index" */
-      '@/layouts/authentication/Index'
+      '@/layouts/authentication/Index.vue'
     ),
     children: [
       {
@@ -113,7 +115,7 @@ const routes = [
         name: 'SignIn',
         component: () => import(
           /* webpackChunkName: "views-sign-in" */
-          '@/views/authentication/SignIn'
+          '@/views/authentication/SignIn.vue'
         )
       },
       {
@@ -121,7 +123,7 @@ const routes = [
         name: 'SignUp',
         component: () => import(
           /* webpackChunkName: "views-sign-up" */
-          '@/views/authentication/SignUp'
+          '@/views/authentication/SignUp.vue'
         )
       },
     ]
@@ -130,7 +132,7 @@ const routes = [
     path: '/page',
     component: () => import(
       /* webpackChunkName: "layouts-page-index" */
-      '@/layouts/page/Index'
+      '@/layouts/page/Index.vue'
     ),
     children: [
       {
@@ -138,7 +140,7 @@ const routes = [
         name: 'ProductList',
         component: () => import(
           /* webpackChunkName: "views-product-list" */
-          '@/views/page/ProductList'
+          '@/views/page/ProductList.vue'
         )
       },
     ]

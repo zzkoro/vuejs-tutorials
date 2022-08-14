@@ -1,17 +1,14 @@
+import type { UserState, SignInRequest, RegisterRequest } from './type';
 
-const signIn = ({ commit, state }, signInRequest) => {
-  const userInfo = {
-    userId: signInRequest.userId,
-    email: signInRequest.email,
-  };
-  commit('setUser', userInfo);
+
+export const signIn = ({ commit, state }, signInRequest:SignInRequest) => {
   commit('setLogin', true);
   return {
     resMsg: 'signIn OK'
   };
 };
 
-const register = ({ commit, state },  registerRequest) => {
+export const register = ({ commit, state },  registerRequest:RegisterRequest) => {
   const userInfo = {
     userId: registerRequest.userId,
     email: registerRequest.email,

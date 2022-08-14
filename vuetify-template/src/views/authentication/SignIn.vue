@@ -78,23 +78,35 @@
     </v-row>
   </v-container>
 </template>
-<script>
+<script lang="ts">
 import { ref, reactive, toRefs } from '@vue/composition-api'
+
+import { store } from '@/store'
+
+
+import type { SignInRequest } from '@/store/modules/user/type'
+
 
 export default {
   name: 'SignIn',
   setup(props, context) {
     const state = reactive({
-      email: null,
-      password: null,
-      observer: null,
-      form: null,
+      email: '',
+      password: '',
+      observer: undefined as any,
+      form: undefined as any,
     });
 
     const signIn = () => {
       state.observer.validate().then(result => {
         if (result) {
           alert('로그인 처리')
+          const userParam: SignInRequest = {
+            email: state.email,
+            password: state.email,
+          };
+          store.dispatch('user/signIn', userParam);
+
         }
       })
     };

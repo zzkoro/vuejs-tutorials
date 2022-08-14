@@ -1,17 +1,27 @@
 // .eslintrc.js
 module.exports = {
-  parserOptions: {
-    parser: 'babel-eslint',
+
+  root: true,
+
+  env: {
+    node: true,
   },
+
+  ignorePatterns: ['src/assets/**', '**/node_modules/**', 'translations/language-pack/**', 'public/lottie.js'],
+
+
   extends: [
     'plugin:vue/recommended',
+    "plugin:vue/essential",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
   ],
+
   plugins: [
     'vuetify'
   ],
+
   rules: {
-    'vuetify/no-deprecated-classes': 'error',
-    'vuetify/no-legacy-grid': 'error',
-    "indent": ["error", 2]
+    "indent": ["error", 2],
   },
 }
