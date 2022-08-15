@@ -5,17 +5,14 @@
   </v-app>
 </template>
 <script>
-import PageBar from './AppBar'
-import PageView from './View'
+import PageBar from "./AppBar";
+import PageView from "./View";
 export default {
-  name: 'PageLayout',
+  name: "PageLayout",
   components: {
     PageBar,
     PageView,
   },
-
-}
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

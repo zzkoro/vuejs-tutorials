@@ -7,9 +7,7 @@
 </template>
 <script>
 export default {
-  name: 'DefaultView'
-}
+  name: "DefaultView",
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

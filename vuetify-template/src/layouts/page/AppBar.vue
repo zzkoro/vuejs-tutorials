@@ -1,17 +1,11 @@
 <template lang="">
-  <v-app-bar
-    app
-    color="primary"
-    dark
-  >
+  <v-app-bar app color="primary" dark>
     <v-toolbar-title>Page Layout</v-toolbar-title>
   </v-app-bar>
 </template>
 <script>
 export default {
-  name: "PageBar"
-}
+  name: "PageBar",
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

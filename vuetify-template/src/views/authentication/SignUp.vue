@@ -11,22 +11,14 @@
         </router-link>
         <v-card width="460">
           <v-card-text class="text-center px-12 py-16">
-            <validation-observer
-              ref="observer"
-              v-slot="{ invalid }"
-            >
-              <v-form
-                ref="form"
-                @submit.prevent="signUp"
-              >
-                <div class="text-h4 font-weight-black mb-10">
-                  회원가입
-                </div>
+            <validation-observer ref="observer" v-slot="{ invalid }">
+              <v-form ref="form" @submit.prevent="signUp">
+                <div class="text-h4 font-weight-black mb-10">회원가입</div>
                 <validation-provider
                   v-slot="{ errors }"
                   name="이메일"
                   :rules="{
-                    required: true
+                    required: true,
                   }"
                 >
                   <v-text-field
@@ -41,7 +33,7 @@
                   v-slot="{ errors }"
                   name="비밀번호"
                   :rules="{
-                    required: true
+                    required: true,
                   }"
                 >
                   <v-text-field
@@ -57,7 +49,7 @@
                   v-slot="{ errors }"
                   name="비밀번호 확인"
                   :rules="{
-                    confirmed: '비밀번호'
+                    confirmed: '비밀번호',
                   }"
                 >
                   <v-text-field
@@ -88,26 +80,33 @@
     </v-row>
   </v-container>
 </template>
-<script>
-export default {
-  name: 'SignUp',
-  data() {
-    return {
-      email: null,
-      password: null,
-      passwordConfirm: null,
-    }
-  },
-  methods: {
-    async signUp() {
-      const result = await this.$refs.observer.validate()
-      if (result) {
-        alert('로그인')
-      }
-    }
-  },
-}
-</script>
-<style lang="">
+<script lang="ts">
+import Vue from "vue";
+import { ref, reactive, toRefs } from "@vue/composition-api";
 
-</style>
+export default Vue.extend({
+  name: "SignUp",
+  setup(props, context) {
+    const state = reactive({
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      observer: undefined as any,
+      form: undefined as any,
+    });
+
+    const signUp = async () => {
+      const result = await state.observer.validate();
+      if (result) {
+        alert("가입하기");
+      }
+    };
+
+    return {
+      ...toRefs(state),
+      signUp,
+    };
+  },
+});
+</script>
+<style lang=""></style>

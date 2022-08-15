@@ -1,4 +1,3 @@
-
 <template>
   <v-list-item
     :to="item.to"
@@ -17,15 +16,13 @@
 </template>
 <script>
 export default {
-  name: 'DefaultListItem',
+  name: "DefaultListItem",
   props: {
     item: {
       type: Object,
-      default: () => ({})
-    }
-  }
-}
+      default: () => ({}),
+    },
+  },
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

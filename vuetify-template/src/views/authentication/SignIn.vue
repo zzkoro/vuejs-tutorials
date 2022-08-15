@@ -4,17 +4,9 @@
       <v-col cols="auto">
         <v-card width="460">
           <v-card-text class="text-center px-12 py-16">
-            <validation-observer
-              ref="observer"
-              v-slot="{ invalid }"
-            >
-              <v-form
-                ref="form"
-                @submit.prevent="signIn"
-              >
-                <div class="text-h4 font-weight-black mb-10">
-                  로그인
-                </div>
+            <validation-observer ref="observer" v-slot="{ invalid }">
+              <v-form ref="form" @submit.prevent="signIn">
+                <div class="text-h4 font-weight-black mb-10">로그인</div>
                 <validation-provider
                   v-slot="{ errors }"
                   name="이메일"
@@ -57,12 +49,10 @@
                   로그인
                 </v-btn>
                 <div class="mt-5">
-                  <router-link
-                    class="text-decoration-none"
-                    to="/"
-                  >
+                  <router-link class="text-decoration-none" to="/">
                     홈
-                  </router-link> |
+                  </router-link>
+                  |
                   <router-link
                     class="text-decoration-none"
                     to="/authentication/sign-up"
@@ -80,45 +70,41 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive, toRefs } from '@vue/composition-api'
+import Vue from "vue";
+import { ref, reactive, toRefs } from "@vue/composition-api";
 
-import { store } from '@/store'
+import { store } from "@/store";
 
+import type { SignInRequest } from "@/store/modules/user/type";
 
-import type { SignInRequest } from '@/store/modules/user/type'
-
-
-export default {
-  name: 'SignIn',
+export default Vue.extend({
+  name: "SignIn",
   setup(props, context) {
     const state = reactive({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       observer: undefined as any,
       form: undefined as any,
     });
 
     const signIn = () => {
-      state.observer.validate().then(result => {
+      state.observer.validate().then((result) => {
         if (result) {
-          alert('로그인 처리')
+          alert("로그인 처리");
           const userParam: SignInRequest = {
             email: state.email,
             password: state.email,
           };
-          store.dispatch('user/signIn', userParam);
-
+          store.dispatch("user/signIn", userParam);
         }
-      })
+      });
     };
 
     return {
       ...toRefs(state),
       signIn,
-    }
-  }
-};
+    };
+  },
+});
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>
