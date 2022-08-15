@@ -78,6 +78,7 @@
     </v-row>
   </v-container>
 </template>
+
 <script lang="ts">
 import { ref, reactive, toRefs } from '@vue/composition-api'
 
@@ -116,7 +117,7 @@ export default {
       signIn,
     }
   }
-}
+};
 </script>
 <style lang="">
 
