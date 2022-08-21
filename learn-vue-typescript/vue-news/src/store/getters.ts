@@ -1,6 +1,6 @@
 import type { RootState } from "./state";
 
-export default {
+const getters = {
   fetchedItem(state: RootState) {
     return state.item;
   },
@@ -30,3 +30,7 @@ export default {
     return state.item.score;
   },
 };
+
+export type GettersType = typeof getters;
+
+export { getters };
