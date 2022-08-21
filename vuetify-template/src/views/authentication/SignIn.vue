@@ -95,9 +95,14 @@ export default defineComponent({
             password: state.email,
           };
           store.dispatch("user/signIn", userParam);
+          store.commit("user/setUser", userParam);
+
+          console.log("email:" + store.state.user.email);
         }
       });
     };
+
+    console.log("email:" + store.state.user.email);
 
     return {
       ...toRefs(state),

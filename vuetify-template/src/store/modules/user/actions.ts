@@ -1,21 +1,25 @@
 import type { UserState, SignInRequest, RegisterRequest } from "./type";
+import { ActionContext } from "vuex";
 
-export const signIn = ({ commit, state }, signInRequest: SignInRequest) => {
-  commit("setLogin", true);
+export const signIn = (
+  context: ActionContext<UserState, any>,
+  signInRequest: SignInRequest
+): any => {
+  context.commit("setLogin", true);
   return {
     resMsg: "signIn OK",
   };
 };
 
 export const register = (
-  { commit, state },
+  context: ActionContext<UserState, any>,
   registerRequest: RegisterRequest
-) => {
+): any => {
   const userInfo = {
     userId: registerRequest.userId,
     email: registerRequest.email,
   };
-  commit("setUser", userInfo);
+  context.commit("setUser", userInfo);
   return {
     resMsg: "register OK",
   };

@@ -1,12 +1,12 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify/lib/framework';
+import Vue from "vue";
+import Vuetify from "vuetify/lib/framework";
 
-import colors from 'vuetify/lib/util/colors'
+import colors from "vuetify/lib/util/colors";
 
 Vue.use(Vuetify);
 
 const colorTheme = {
-  primary: colors.deepOrange
+  primary: colors.deepOrange,
 };
 
 export default new Vuetify({
@@ -16,7 +16,7 @@ export default new Vuetify({
   theme: {
     themes: {
       light: colorTheme,
-      dark: colorTheme
-    }
-  }
+      dark: colorTheme,
+    },
+  },
 });

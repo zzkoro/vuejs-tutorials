@@ -1,5 +1,4 @@
-import type { UserState } from './type';
-
+import type { UserState } from "./type";
 
 export const setUser = (state: UserState, userInfo: UserState) => {
   state.userId = userInfo.userId;

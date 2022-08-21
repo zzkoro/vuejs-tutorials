@@ -7,10 +7,7 @@
     :src="require('@/assets/sidebar.png')"
   >
     <template v-slot:img="props">
-      <v-img
-        :gradient="gradient"
-        v-bind="props"
-      />
+      <v-img :gradient="gradient" v-bind="props" />
     </template>
 
     <default-drawer-header />
@@ -37,31 +34,28 @@
   </v-navigation-drawer>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
-  name: 'DefaultDrawer',
+  name: "DefaultDrawer",
   components: {
-    DefaultDrawerHeader: () => import('./DrawerHeader'),
-    DefaultList: () => import('./List'),
+    DefaultDrawerHeader: () => import("./DrawerHeader"),
+    DefaultList: () => import("./List"),
   },
   computed: {
-    ...mapState('app', {
-      gradient: 'gradient',
-      items: 'items'
+    ...mapState("app", {
+      gradient: "gradient",
+      items: "items",
     }),
     drawer: {
       get() {
-        return this.$store.getters['app/getDrawer']
+        return this.$store.getters["app/getDrawer"];
       },
       set(value) {
-        return this.$store.commit('app/setDrawer', value)
-      }
-    }
+        return this.$store.commit("app/setDrawer", value);
+      },
+    },
   },
-
-}
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

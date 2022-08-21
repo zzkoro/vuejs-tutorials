@@ -4,15 +4,12 @@
   </v-app>
 </template>
 <script>
-import AuthenticationView from './View'
+import AuthenticationView from "./View";
 export default {
-  name: 'AuthenticationLayout',
+  name: "AuthenticationLayout",
   components: {
     AuthenticationView,
   },
-
-}
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

@@ -5,10 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'AuthenticationView'
-}
+  name: "AuthenticationView",
+};
 </script>
-<style lang="">
-
-</style>
-
+<style lang=""></style>

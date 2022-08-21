@@ -1,17 +1,11 @@
 <template lang="">
   <v-container>
     <v-row>
-      <v-col>
-        Product List
-      </v-col>
+      <v-col> Product List </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-export default {
-
-}
+export default {};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>
