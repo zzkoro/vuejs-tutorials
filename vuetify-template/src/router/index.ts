@@ -1,5 +1,5 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import VueRouter, { NavigationGuardNext, Route } from "vue-router";
 
 import type { RouteConfig } from "vue-router";
 
@@ -22,6 +22,10 @@ const routes: RouteConfig[] = [
             /* webpackChunkName: "views-dashboard" */
             "@/views/Dashboard.vue"
           ),
+        beforeEnter: (to: Route, from: Route, next: NavigationGuardNext) => {
+          // ...
+          next();
+        },
       },
       {
         path: "/grid-system",
@@ -131,6 +135,12 @@ const routes: RouteConfig[] = [
             /* webpackChunkName: "views-sign-in" */
             "@/views/authentication/SignIn.vue"
           ),
+        beforeEnter: (to: Route, from: Route, next: NavigationGuardNext) => {
+          // ...
+          next();
+          console.log(to);
+          console.log(from);
+        },
       },
       {
         path: "sign-up",

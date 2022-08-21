@@ -87,6 +87,9 @@ export default defineComponent({
     });
 
     const signIn = () => {
+      console.log(state.observer);
+      console.log(state.form);
+
       state.observer.validate().then((result) => {
         if (result) {
           alert("로그인 처리");
