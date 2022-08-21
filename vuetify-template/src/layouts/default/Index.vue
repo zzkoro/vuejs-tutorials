@@ -5,22 +5,18 @@
     <default-view />
   </v-app>
 </template>
-<script>
-
-import DefaultBar from './AppBar'
-import DefaultDrawer from './Drawer'
-import DefaultView from './View'
+<script lang="ts">
+import DefaultBar from "./AppBar.vue";
+import DefaultDrawer from "./Drawer.vue";
+import DefaultView from "./View.vue";
 
 export default {
-  name: 'DefaultLayout',
+  name: "DefaultLayout",
   components: {
     DefaultBar,
     DefaultDrawer,
-    DefaultView
-  }
-
-}
+    DefaultView,
+  },
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

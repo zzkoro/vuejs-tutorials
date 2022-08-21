@@ -3,12 +3,22 @@
     <router-view />
   </v-fade-transition>
 </template>
-<script>
-import '@/styles/overrides.sass'
-export default {
-  name: 'App'
-}
-</script>
-<style lang="">
+<script lang="ts">
+import "@/styles/overrides.sass";
+import { reactive, toRefs, defineComponent } from "vue";
 
-</style>
+export default defineComponent({
+  name: "App",
+
+  setup() {
+    console.log(process.env);
+    // const state = reactive({
+    //   count: 0,
+    // });
+    // return {
+    //   ...toRefs(state),
+    // };
+  },
+});
+</script>
+<style lang=""></style>

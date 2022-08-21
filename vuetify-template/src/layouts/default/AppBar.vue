@@ -1,30 +1,23 @@
 <template lang="">
-  <v-app-bar
-    app
-    color="primary"
-    dark
-  >
+  <v-app-bar app color="primary" dark>
     <v-app-bar-nav-icon @click="drawer = !drawer" />
     <v-toolbar-title>{{ $route.name }}</v-toolbar-title>
     <v-spacer />
   </v-app-bar>
 </template>
-<script>
+<script lang="ts">
 export default {
-  name: 'DefaultBar',
+  name: "DefaultBar",
   computed: {
     drawer: {
       get() {
-        return this.$store.getters['app/getDrawer']
+        return this.$store.getters["app/getDrawer"];
       },
-      set (value) {
-        return this.$store.commit('app/setDrawer', value);
-      }
-
-    }
-  }
-}
+      set(value) {
+        return this.$store.commit("app/setDrawer", value);
+      },
+    },
+  },
+};
 </script>
-<style lang="">
-
-</style>
+<style lang=""></style>

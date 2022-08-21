@@ -81,10 +81,9 @@
   </v-container>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import { ref, reactive, toRefs } from "@vue/composition-api";
+import { ref, reactive, toRefs, defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "SignUp",
   setup(props, context) {
     const state = reactive({

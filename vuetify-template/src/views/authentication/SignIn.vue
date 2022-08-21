@@ -70,14 +70,13 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { ref, reactive, toRefs } from "@vue/composition-api";
+import { ref, reactive, toRefs, defineComponent } from "vue";
 
 import { store } from "@/store";
 
 import type { SignInRequest } from "@/store/modules/user/type";
 
-export default Vue.extend({
+export default defineComponent({
   name: "SignIn",
   setup(props, context) {
     const state = reactive({
