@@ -1,12 +1,17 @@
 <template>
-  <div><canvas id="myChart"></canvas></div>
+  <div><canvas id="myChart" ref="myChart"></canvas></div>
 </template>
 
 <script lang="ts">
 import { ChartConfiguration } from "chart.js";
 import Vue from "vue";
+import { VueConstructor } from "vue/types/umd";
 
-export default Vue.extend({
+export default (
+  Vue as VueConstructor<
+    Vue & { $refs: { myChart: HTMLCanvasElement; my: HTMLDivElement } }
+  >
+).extend({
   mounted() {
     const labels = ["January", "February", "March", "April", "May", "June"];
 
@@ -36,13 +41,14 @@ export default Vue.extend({
             intersect: false,
           },
         },
-        fill: true,
       },
     };
 
-    const canvasElement = document.getElementById(
-      "myChart"
-    ) as HTMLCanvasElement;
+    // const canvasElement = document.getElementById(
+    //   "myChart"
+    // ) as HTMLCanvasElement;
+
+    const canvasElement = this.$refs.myChart;
     const ctx = canvasElement.getContext("2d");
 
     if (!ctx) return;
